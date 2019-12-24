@@ -18,7 +18,7 @@ sdk, err := ailpay.New(appId,
         // 支付宝根证书                 例如 test_alipay_interface/alipayRootCert.crt
         alipay.SetAlipayRootCertFilePath(alipayRootCertFilepath),
         // 是否开启debug   这个可以打印部分信息
-		alipay.SetDev(true),
+	alipay.SetDev(true),
 	)
 ```
 
@@ -59,7 +59,7 @@ par.SetNotifyUrl(notifyUrl)
 
 # 发送请求 
 ```go
-// 定义返回结构体 这个位置不能用interface{} 不然会接受不到对应的数据 最好根据官方的对应参数穿件结构体
+// 定义返回结构体 这个位置不能用interface{} 不然会接受不到对应的数据 最好根据官方的对应参数创建结构体
 var result AlipayFundTansToaccountTransferResult
 //  请求只要alipay  返回的code 不是成功的code  都会返回错误信息 可以打印查看
 err := sdk.Do(par,"POST",&result)
